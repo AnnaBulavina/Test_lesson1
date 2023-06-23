@@ -25,9 +25,9 @@ def open_login_page(driver):
     element_click(driver, 'user-name')
 
 def login(driver, login, password):
-element_send_keys(driver, 'user-name', LOGIN)
-element_send_keys(driver, 'password', PASSWORD)
-element_click(driver, 'login-button')
+    element_send_keys(driver, 'user-name', LOGIN)
+    element_send_keys(driver, 'password', PASSWORD)
+    element_click(driver, 'login-button')
 
 driver = get_driver()
 open_page(driver, URL)
