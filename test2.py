@@ -1,4 +1,3 @@
-import driver as driver
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.chrome.service import Service as ChromeService
@@ -12,7 +11,7 @@ def get_driver():
     chrome_options = Options()
     chrome_options.add_argument("--window-size=1920,800")
     chrome_options.add_argument('--headless')
-    driver = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()))
+    driver = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()), options=chrome_options)
     driver.maximize_window()
     driver.implicitly_wait(10)
     return driver
@@ -39,5 +38,5 @@ driver = get_driver()
 open_page(driver, URL)
 open_login_page(driver)
 login(driver=driver, login=LOGIN, password=PASSWORD)
-
-driver.quit()
+pass
+#driver.quit()
